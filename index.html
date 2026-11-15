@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stratafall — Spatial Block Puzzle for Apple Vision Pro</title>
+  <meta name="description" content="Stratafall is a 3D spatial block puzzle built natively for Apple Vision Pro and visionOS. Stack mineral polycubes in your room, clear full horizontal layers, and watch them fracture." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-top: #070b12;
+      --bg-mid: #101a2b;
+      --card: rgba(20, 30, 48, 0.72);
+      --border: rgba(165, 205, 255, 0.16);
+      --text: #eef3fa;
+      --muted: #9eb0c8;
+      --amber: #f2aa24;
+      --celestine: #5cb8eb;
+      --jade: #16a87d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 80% 10%, rgba(92, 184, 235, 0.16), transparent 60%),
+        radial-gradient(800px 550px at 15% 20%, rgba(242, 170, 36, 0.13), transparent 55%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    header.nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 44px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+    .gem {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--amber), var(--celestine));
+      box-shadow: 0 0 18px rgba(92, 184, 235, 0.35);
+    }
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      transition: 0.15s ease;
+    }
+    nav a:hover, nav a.active {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border);
+    }
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 36px 32px;
+      backdrop-filter: blur(18px);
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--celestine);
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 62ch;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.07);
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, #2d8fd5, #1e6cb3);
+      border-color: rgba(130, 210, 255, 0.45);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    footer {
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    footer a { color: var(--celestine); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="./index.html">
+        <span class="gem" aria-hidden="true"></span>
+        <span>Stratafall</span>
+      </a>
+      <nav aria-label="Primary">
+        <a class="active" href="./index.html">Overview</a>
+        <a href="./support.html">Support &amp; FAQ</a>
+        <a href="./privacy.html">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">Apple Vision Pro &middot; Spatial Computing Game</span>
+        <h1>Stack falling mineral polycubes directly in your room.</h1>
+        <p class="lead">
+          Stratafall brings volumetric block-stacking puzzles natively to visionOS. Anchor the three-dimensional lattice on your table or floor, sculpt complete horizontal layers with natural hand gestures or accessible button controls, and watch cleared strata fracture into physical mineral shards.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="./support.html">Support &amp; Controls Guide</a>
+          <a class="btn" href="./privacy.html">Privacy Policy</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Highlights">
+        <article class="card">
+          <h2>Anchored to Your Space</h2>
+          <p>Place and resize the lattice well anywhere from a cozy seated tabletop setup to a full room-scale floor pit with persistent world anchoring.</p>
+        </article>
+        <article class="card">
+          <h2>Seven Distinct Modes</h2>
+          <p>Challenge yourself across Marathon, Sprint (Plane Quota), Perfect Clear, Score Target, Score Ladder, Survival, and Garbage Dig rules.</p>
+        </article>
+        <article class="card">
+          <h2>Accessible &amp; Comfort-First</h2>
+          <p>Playable without hand gestures via the full Controls panel, featuring Reduce Motion dissolve effects, Seated Mode, VoiceOver cues, and Mineral Strata surface patterns.</p>
+        </article>
+        <article class="card">
+          <h2>Private by Design</h2>
+          <p>No developer accounts, no tracking, and no cloud servers. All spatial sensing runs locally on device and never leaves your Apple Vision Pro.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 Basil Trunov. Built for visionOS.</span>
+      <span>
+        <a href="./privacy.html">Privacy Policy</a> &middot;
+        <a href="./support.html">Support</a> &middot;
+        <a href="mailto:v.v.trunov@gmail.com">v.v.trunov@gmail.com</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>

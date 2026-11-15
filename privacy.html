@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — Stratafall</title>
+  <meta name="description" content="Privacy Policy for Stratafall, a spatial block puzzle game for Apple Vision Pro." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-top: #070b12;
+      --bg-mid: #101a2b;
+      --card: rgba(20, 30, 48, 0.72);
+      --border: rgba(165, 205, 255, 0.16);
+      --text: #eef3fa;
+      --muted: #a6b7ce;
+      --amber: #f2aa24;
+      --celestine: #5cb8eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 80% 10%, rgba(92, 184, 235, 0.14), transparent 60%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 100%);
+      min-height: 100vh;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 40px 20px 64px; }
+    header.nav {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+      margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+      color: var(--text); font-weight: 700; font-size: 1.15rem;
+    }
+    .gem {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--amber), var(--celestine));
+    }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; }
+    nav a {
+      color: var(--muted); text-decoration: none; padding: 8px 14px;
+      border-radius: 999px; border: 1px solid transparent; font-size: 0.95rem;
+    }
+    nav a:hover, nav a.active {
+      color: var(--text); background: rgba(255, 255, 255, 0.08); border-color: var(--border);
+    }
+    article.doc {
+      background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 34px 30px;
+    }
+    h1 { margin: 0 0 6px; font-size: 2rem; letter-spacing: -0.02em; }
+    .meta { color: var(--celestine); font-size: 0.92rem; margin: 0 0 26px; }
+    h2 { margin: 28px 0 8px; font-size: 1.2rem; color: #ffffff; }
+    p, li { color: var(--muted); font-size: 0.98rem; }
+    ul { padding-left: 20px; }
+    a { color: var(--celestine); }
+    .summary-box {
+      background: rgba(92, 184, 235, 0.1);
+      border: 1px solid rgba(92, 184, 235, 0.3);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      color: var(--text);
+    }
+    footer {
+      margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.88rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="./index.html">
+        <span class="gem" aria-hidden="true"></span>
+        <span>Stratafall</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Overview</a>
+        <a href="./support.html">Support &amp; FAQ</a>
+        <a class="active" href="./privacy.html">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <article class="doc">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Stratafall for Apple Vision Pro &middot; Effective Date: November 15, 2026</p>
+
+      <div class="summary-box">
+        <strong>Summary:</strong> Stratafall does not collect, transmit, rent, or sell personal data. There is no developer server, no user account requirement, no advertising SDK, and no third-party analytics SDK.
+      </div>
+
+      <h2>1. Data Stored Locally on Your Device</h2>
+      <p>
+        Stratafall stores your local gameplay data exclusively in your Apple Vision Pro app container:
+      </p>
+      <ul>
+        <li><strong>Player Nickname &amp; Leaderboard:</strong> Recorded scores, mode statistics, and your chosen display nickname. You may use any nickname instead of your real name, and you can delete all recorded scores anytime using <strong>Leaderboard &rarr; Clear Scores</strong> inside the app.</li>
+        <li><strong>Saved Game &amp; Preferences:</strong> Current paused run snapshots (so you can resume where you left off), gameplay difficulty/visual presets, accessibility settings, and confirmed board placement identifiers (<code>WorldAnchor</code> UUIDs).</li>
+      </ul>
+      <p>
+        Uninstalling Stratafall removes all locally stored app-container data. Encrypted device and iCloud backups, if enabled, are governed solely by your Apple system settings and Apple's Privacy Policy.
+      </p>
+
+      <h2>2. World Sensing and Hand Tracking Permissions</h2>
+      <p>
+        With your explicit permission, Stratafall uses visionOS spatial capabilities purely to enhance gameplay on your device:
+      </p>
+      <ul>
+        <li><strong>World Sensing:</strong> Detects horizontal surfaces and room geometry so you can snap the game board onto a floor or table and allow fractured block debris to interact with your surroundings.</li>
+        <li><strong>Hand Tracking:</strong> Enables optional pinch, drag, and palm-rotation gestures to maneuver falling polycubes directly in space.</li>
+      </ul>
+      <p>
+        All room-mesh geometry and hand-tracking anchor coordinates are processed ephemerally in memory on your Apple Vision Pro and are never recorded to disk or transmitted to the developer or any third party. You can decline either permission at launch—manual board placement and the complete on-screen <strong>Controls</strong> button panel remain 100% playable without spatial sensing. Permissions can be changed at any time in <strong>Settings &rarr; Apps &rarr; Stratafall</strong>.
+      </p>
+
+      <h2>3. Diagnostics and Crash Reporting</h2>
+      <p>
+        Stratafall writes technical runtime events (such as frame/thermal telemetry and lifecycle state transitions) strictly to the local Apple system log and to an internal rolling diagnostic log inside the app's private container (capped at the 5 most recent sessions, up to 2 MB per file). Player nicknames are omitted from leaderboard diagnostic entries. These logs remain private on your device. If you have opted into sharing analytics with app developers through Apple's visionOS system settings, Apple may provide anonymized crash or diagnostic reports through App Store Connect.
+      </p>
+
+      <h2>4. Third-Party Services and Website Hosting</h2>
+      <p>
+        The Stratafall visionOS application includes no third-party SDKs, ad networks, or trackers and makes no network requests of its own in v1.0.
+      </p>
+      <p>
+        This documentation website is hosted statically on GitHub Pages (GitHub, Inc.), which may process standard web server request logs (such as IP address and browser user agent) in accordance with GitHub's Privacy Statement. If you contact support by email, your email address and message contents are used solely to respond to your inquiry.
+      </p>
+
+      <h2>5. Children's Privacy</h2>
+      <p>
+        Because Stratafall collects no personal data off-device, requires no account registration, and displays no third-party advertisements, it is suitable for players of all ages (4+).
+      </p>
+
+      <h2>6. Changes and Contact</h2>
+      <p>
+        If Stratafall introduces future features that change how data is processed (for example, optional online or collaborative modes in future versions), this Privacy Policy will be updated prior to release.
+      </p>
+      <p>
+        <strong>Developer &amp; Privacy Contact:</strong><br />
+        Basil Trunov<br />
+        Email: <a href="mailto:v.v.trunov@gmail.com">v.v.trunov@gmail.com</a>
+      </p>
+    </article>
+
+    <footer>
+      <span>&copy; 2026 Basil Trunov.</span>
+      <span><a href="./index.html">Home</a> &middot; <a href="./support.html">Support &amp; FAQ</a></span>
+    </footer>
+  </div>
+</body>
+</html>

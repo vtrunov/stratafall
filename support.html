@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support &amp; FAQ — Stratafall</title>
+  <meta name="description" content="Support guide, controls reference, accessibility options, and contact information for Stratafall on Apple Vision Pro." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-top: #070b12;
+      --bg-mid: #101a2b;
+      --card: rgba(20, 30, 48, 0.72);
+      --border: rgba(165, 205, 255, 0.16);
+      --text: #eef3fa;
+      --muted: #a6b7ce;
+      --amber: #f2aa24;
+      --celestine: #5cb8eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 80% 10%, rgba(92, 184, 235, 0.14), transparent 60%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 100%);
+      min-height: 100vh;
+      line-height: 1.65;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 40px 20px 64px; }
+    header.nav {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+      margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+      color: var(--text); font-weight: 700; font-size: 1.15rem;
+    }
+    .gem {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--amber), var(--celestine));
+    }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; }
+    nav a {
+      color: var(--muted); text-decoration: none; padding: 8px 14px;
+      border-radius: 999px; border: 1px solid transparent; font-size: 0.95rem;
+    }
+    nav a:hover, nav a.active {
+      color: var(--text); background: rgba(255, 255, 255, 0.08); border-color: var(--border);
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 22px;
+      padding: 26px 28px; margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 8px; font-size: 2rem; letter-spacing: -0.02em; }
+    .sub { color: var(--muted); margin: 0 0 24px; }
+    h2 { margin: 0 0 10px; font-size: 1.16rem; color: #ffffff; }
+    p, li { color: var(--muted); font-size: 0.96rem; }
+    ul, ol { padding-left: 20px; margin: 8px 0 0; }
+    a { color: var(--celestine); }
+    .btn {
+      display: inline-block; padding: 11px 18px; border-radius: 999px;
+      background: linear-gradient(135deg, #2d8fd5, #1e6cb3);
+      border: 1px solid rgba(130, 210, 255, 0.45);
+      color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.94rem;
+      margin-top: 8px;
+    }
+    footer {
+      margin-top: 38px; padding-top: 20px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.88rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="./index.html">
+        <span class="gem" aria-hidden="true"></span>
+        <span>Stratafall</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="./index.html">Overview</a>
+        <a class="active" href="./support.html">Support &amp; FAQ</a>
+        <a href="./privacy.html">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <h1>Support &amp; FAQ</h1>
+    <p class="sub">Everything you need to get started, customize controls, and play comfortably in Stratafall on Apple Vision Pro.</p>
+
+    <section class="card">
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Open Stratafall and select <strong>Play</strong> (or <strong>Resume Saved Game</strong> if you paused an earlier session).</li>
+        <li>Place and size the 3D well on your floor or table. You can pinch-drag the handles or use the <strong>Bring to Me</strong>, <strong>Turn &minus;15&deg; / +15&deg;</strong>, and size buttons directly on the panel.</li>
+        <li>Double-tap the board (or tap <strong>Confirm</strong>) to lock placement, enter a local nickname, and select <strong>Start Game</strong>.</li>
+        <li>Fill an entire horizontal layer to clear it cleanly and trigger crystalline fracture scoring.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Playing Without Hand Gestures</h2>
+      <p>
+        Every action in Stratafall is playable with standard gaze-and-tap or pointer controls—hand tracking is never required:
+      </p>
+      <ul>
+        <li>Tap the <strong>Controls</strong> button on the HUD ornament beside the board (or open <strong>Settings &rarr; Play</strong>) for full button parity: lateral movement, clockwise and counter-clockwise 3-axis rotations (Pitch, Yaw, Roll), Soft Drop, Hard Drop, Hold, Pause, and <strong>Bring Board to Me</strong>.</li>
+        <li>All interactive buttons include explicit capsule hit targets and hover highlights for Dwell Control and Switch Control compatibility.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Comfort &amp; Accessibility Options</h2>
+      <ul>
+        <li><strong>Seated Mode (Settings &rarr; Controls):</strong> Positions the well closer at tabletop height with compact gesture reach zones.</li>
+        <li><strong>Reduce Motion:</strong> Automatically follows your visionOS Reduce Motion system setting—fracturing blocks gently dissolve in place without flying shards, banners cross-fade cleanly, and floating score indicators appear without travel.</li>
+        <li><strong>Color-Blind-Safe Identity:</strong> Default <strong>Mineral Strata</strong> pigments separate every piece shape by luminance, and toggling <strong>Distinguish without color</strong> embosses distinct 3D surface vein patterns plus geometric HUD motifs.</li>
+        <li><strong>Break Reminders &amp; VoiceOver:</strong> Configure optional gentle break prompts in <strong>Settings &rarr; Controls</strong>, and enable VoiceOver for labeled HUD readouts and clear/level-up announcements.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Permissions &amp; Troubleshooting</h2>
+      <ul>
+        <li><strong>Re-enabling Room Sensing or Hand Tracking:</strong> If you declined spatial permissions on launch, open visionOS <strong>Settings &rarr; Apps &rarr; Stratafall</strong>, enable the toggle, then return to Stratafall and choose <strong>Retry</strong> (or close and reopen the board).</li>
+        <li><strong>Lost Track of the Board:</strong> Tap <strong>Bring Board to Me</strong> on the HUD to recenter the well comfortably in front of your current viewpoint without resetting your score.</li>
+        <li><strong>Pausing &amp; Backgrounding:</strong> Pressing the Digital Crown or stepping out pauses both falling pieces and physics simulations automatically. When you return, your game waits paused until you choose Resume.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact Support</h2>
+      <p>
+        Need help or want to report a bug? Send your feedback directly to the developer:
+      </p>
+      <p>
+        <strong>Email:</strong> <a href="mailto:v.v.trunov@gmail.com?subject=Stratafall%20Support">v.v.trunov@gmail.com</a>
+      </p>
+      <p>
+        When reporting an issue, please include your <strong>app version/build</strong>, your <strong>visionOS version</strong>, and a short description of what happened. Please do not send photos or scans showing private personal spaces.
+      </p>
+      <a class="btn" href="mailto:v.v.trunov@gmail.com?subject=Stratafall%20Support">Email Developer Support</a>
+    </section>
+
+    <footer>
+      <span>&copy; 2026 Basil Trunov.</span>
+      <span><a href="./index.html">Home</a> &middot; <a href="./privacy.html">Privacy Policy</a></span>
+    </footer>
+  </div>
+</body>
+</html>
